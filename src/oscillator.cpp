@@ -5,6 +5,7 @@
 void oscillator::setup (int rate){
     sampleRate = rate;
     type = sineWave;
+	phase=0;
 }
 
 void oscillator::setFrequency (float freq){
@@ -17,7 +18,7 @@ void oscillator::setVolume (float vol){
 }
 
 float oscillator::getSample(){
-    phase += phaseAdder;
+	 phase += phaseAdder;
     while (phase > TWO_PI) phase -= TWO_PI;
     
     
